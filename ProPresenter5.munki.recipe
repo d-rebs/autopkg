@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads latest version of ProPresenter5 and imports into a Munki repo.</string>
+    <string>Downloads latest version of ProPresenter6 and imports into a Munki repo.</string>
     <key>Identifier</key>
-    <string>com.github.cabal95.munki.ProPresenter5</string>
+    <string>com.github.d-rebs.munki.ProPresenter6</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>ProPresenter5</string>
+        <string>ProPresenter6</string>
         <key>MUNKI_REPO_SUBDIR</key>
         <string>apps</string>
         <key>pkginfo</key>
@@ -42,14 +42,14 @@ mkdir -p '$LIB/Plugins'
 cp -a '$APP/Contents/Resources/RVCloudSync.app' '$LIB/'
 cp -a '$APP/Contents/PlugIns/'* '$LIB/Plugins/'
 
-defaults write /Library/Preferences/com.renewedvision.ProPresenter5.plist SUEnableAutomaticChecks -int 0
+defaults write /Library/Preferences/com.renewedvision.ProPresenter6.plist SUEnableAutomaticChecks -int 0
 exit 0</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.cabal95.download.ProPresenter5</string>
+    <string>com.github.cabal95.download.ProPresenter6</string>
     <key>Process</key>
     <array>
         <dict>
