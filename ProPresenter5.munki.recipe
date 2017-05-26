@@ -37,7 +37,7 @@ chown -R root:wheel '/Users/Shared/Renewed Vision Media'
 chmod -R a+rw '/Users/Shared/Renewed Vision Media'
 
 LIB='/Library/Application Support/RenewedVision'
-APP='/Applications/ProPresenter 5.app'
+APP='/Applications/ProPresenter 6.app'
 mkdir -p '$LIB/Plugins'
 cp -a '$APP/Contents/Resources/RVCloudSync.app' '$LIB/'
 cp -a '$APP/Contents/PlugIns/'* '$LIB/Plugins/'
