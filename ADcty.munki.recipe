@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads and imports Audacity into Munki.</string>
     <key>Identifier</key>
-    <string>com.github.timsutton.munki.audacity</string>
+    <string>com.github.d-rebs.munki.audacity</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
