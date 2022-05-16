@@ -26,7 +26,6 @@
             <string>%NAME%</string>
             <key>unattended_install</key>
             <true/>
-            <key>postinstall_script</key>
         </dict>
     </dict>
     <key>MinimumVersion</key>
