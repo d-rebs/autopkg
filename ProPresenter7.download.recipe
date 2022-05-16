@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads latest version of ProPresenter7.</string>
+    <key>Identifier</key>
+    <string>com.github.d-rebs.download.ProPresenter7</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>ProPresenter 7</string>
+		<key>VENDOR</key>
+        <string>Renewed Vision</string>
+		<key>CONTENT_TYPE_HEADER</key>
+        <string>application/json</string>
+        <key>DATA_BINARY_CONTENT</key>
+        <string>{"query":"\n          query {\n            availableProductSoftwareByPid(pid:\"lens-desktop-mac\") {\n              name\n              version\n              publishDate\n              productBuild {\n                archiveUrl\n              }\n            }\n        }"}</string>
+        <key>SEARCH_PATTERN</key>
+        <string>/downloads/propresenter/mac/*.zip</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.0</string>
+    <key>Process</key>
+      <array>
+         <dict>
+            <key>Arguments</key>
+            <dict>
+               <key>curl_opts</key>
+               <array>
+                  <string>--data-binary</string>
+                  <string>%DATA_BINARY_CONTENT%</string>
+               </array>
+               <key>re_pattern</key>
+               <string>https://renewedvision.com/%SEARCH_PATTERN%</string>
+               <key>request_headers</key>
+               <dict>
+                  <key>content-type</key>
+                  <string>%CONTENT_TYPE_HEADER%</string>
+               </dict>
+               <key>url</key>
+               <string>https://renewedvision.com/propresenter/</string>
+            </dict>
+            <key>Processor</key>
+            <string>URLTextSearcher</string>
+         </dict>
+         <dict>
+            <key>Arguments</key>
+            <dict>
+               <key>curl_opts</key>
+               <array />
+               <key>url</key>
+               <string>%match%</string>
+            </dict>
+            <key>Processor</key>
+            <string>URLDownloader</string>
+         </dict>
+      </array>
+   </dict>
+</plist>
